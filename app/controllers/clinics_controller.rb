@@ -6,12 +6,8 @@ class ClinicsController < ApplicationController
     params[:lat] = params[:lat].to_f
     params[:lon] = params[:lon].to_f
     @clinics = Clinic.get_close_clinics(params[:lat], params[:lon])
-    # @clinics.as_json.map {|elem| 
-    #   elem.merge!()
-    #   puts(elem)
-    # }
+
     render :json => @clinics.as_json.map{|elem|elem.merge!("distance"=>3963.0*Math::acos(Math.sin(params[:lat]/57.295779513082323) * Math.sin(elem['lat']/57.295779513082323) + Math.cos(params[:lat]/57.295779513082323) * Math.cos(elem['lat']/57.295779513082323) * Math.cos((params[:lon]-elem['lon'])/57.295779513082323)))}
-    
   end
 
   # GET /clinics/1 or /clinics/1.json

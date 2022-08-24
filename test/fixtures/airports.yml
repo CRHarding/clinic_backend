@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  type: 
+  lat: 1.5
+  lon: 1.5
+  region: MyString
+  municipality: MyString
+  iata_code: MyString
+
+two:
+  name: MyString
+  type: 
+  lat: 1.5
+  lon: 1.5
+  region: MyString
+  municipality: MyString
+  iata_code: MyString
